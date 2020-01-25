@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">GSM-Hawk</string>
+    <string name="login">LOGIN</string>
+    <string name="hintCode">Employee Code</string>
+    <string name="hintTown">Town</string>
+    <string name="hintDepot">Depot</string>
+    <string name="hintCustomer">Providers</string>
+    <string name="hintStatus">Status</string>
+    <string name="hintSKUGroup">SKU Group</string>
+    <string name="hintQuantity">Quantity</string>
+    <string name="hintAdd">Add</string>
+    <string name="hintSubmit">Submit</string>
+    <string name="hintPerformSync">Sync Data</string>
+    <string name="hintOrderBooking">DCR</string>
+    <string name="hintOrderBasket">Visits</string>
+    <string name="hintProfile">Profile</string>
+    <string name="hintAddCustomer">Add Customer</string>
+    <string name="hintSearch">Search</string>
+    <string name="hintCustomerName">Customer Name</string>
+    <string name="hintCustomerAddress">Customer Address</string>
+    <string name="hintWorkWith">Work With</string>
+    <string name="hintDate">Date</string>
+    <string name="hintReason">Reason/Category</string>
+    <string name="btnLeaveRequest">Leave Request</string>
+    <string name="hintLeaveRequest">Leave Request</string>
+    <string name="hintDashboard">Dashboard</string>
+    <string-array name="status_array">
+        <item>Order - 01</item>
+        <item>Close - 02</item>
+        <item>Sufficient - 03</item>
+        <item>No Cash - 04</item>
+        <item>Refuse - 05</item>
+        <item>No Time - 07</item>
+        <item>No Visited - 03</item>
+    </string-array>
+</resources>

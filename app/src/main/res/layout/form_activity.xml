@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".controller.Login"
+    android:theme="@android:style/Theme.NoTitleBar"
+    android:orientation="vertical"
+    >
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/lightGreen"
+        android:padding="5dp">
+        <LinearLayout
+            android:layout_gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:id="@+id/llParentLayout">
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="@dimen/spinner_height"
+                    android:textColor="@color/darkGreen"
+                    android:background="@color/white"
+                    android:padding="@dimen/padding_10"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+
+                    android:id="@+id/tvName"/>
+
+                <Spinner
+                    android:id="@+id/spDepot"
+                    android:prompt="@string/hintDepot"
+                    android:visibility="gone"
+                    android:layout_width="fill_parent"
+                    android:layout_height="@dimen/spinner_height"
+                    style="@style/spinner_style"
+                    android:autofillHints="@string/hintDepot"/>
+
+                <Spinner
+                    android:id="@+id/spTown"
+                    android:fontFamily="@font/lato_light"
+                    android:layout_width="fill_parent"
+                    android:layout_height="@dimen/spinner_height"
+                    android:prompt="@string/hintTown"
+                    android:visibility="gone"
+                    style="@style/spinner_style"
+                    android:autofillHints="@string/hintTown"/>
+
+                <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+                    android:id="@+id/spCustomer"
+                    android:prompt="@string/hintCustomer"
+                    android:layout_width="fill_parent"
+                    style="@style/spinner_style"
+                    android:layout_height="@dimen/spinner_height"
+                    android:autofillHints="@string/hintCustomer"/>
+
+                <Spinner
+                    android:id="@+id/spWorkWith"
+                    android:fontFamily="@font/lato_light"
+                    android:layout_width="fill_parent"
+                    android:layout_height="@dimen/spinner_height"
+                    android:prompt="@string/hintWorkWith"
+                    style="@style/spinner_style"
+                    android:autofillHints="@string/hintWorkWith"/>
+
+                <Spinner
+                    android:id="@+id/spStatus"
+                    android:prompt="@string/hintStatus"
+                    style="@style/spinner_style"
+                    android:layout_width="fill_parent"
+                    android:layout_height="@dimen/spinner_height"
+                    android:autofillHints="@string/hintStatus"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/llOrderBooking"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+                    <LinearLayout
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/customborder">
+                        <ListView
+
+                            android:id="@+id/lvProducts"
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp" >
+                        </ListView>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:weightSum="3"
+                        android:orientation="horizontal">
+                        <Spinner
+                            android:layout_weight="1"
+                            android:id="@+id/spSKUGroup"
+                            android:prompt="@string/hintSKUGroup"
+                            style="@style/spinner_style"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/spinner_height"
+                            android:autofillHints="@string/hintSKUGroup"
+                            />
+
+
+
+                        <EditText
+                            android:layout_weight="1"
+                            android:layout_marginTop="5dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/spinner_height"
+                            style="@style/text_style"
+                            android:id="@+id/etQuantity"
+                            android:background="@drawable/customborder"
+                            android:hint="@string/hintQuantity"
+                            android:inputType="number"/>
+                        <Button
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/spinner_height"
+                            style="@style/text_style"
+                            android:text="@string/hintAdd"
+                            android:layout_marginTop="5dp"
+                            android:background="@drawable/customborder"
+                            android:id="@+id/btnAdd"
+                            />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/spinner_height"
+                    android:background="@drawable/customborder"
+                    android:id="@+id/etComments"
+                    style="@style/text_style"
+                    android:layout_marginTop="5dp"
+                    android:hint="Comments"/>
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/spinner_height"
+                    android:background="@drawable/customborder"
+                    android:id="@+id/btnSubmit"
+                    style="@style/text_style"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/hintSubmit"/>
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>
