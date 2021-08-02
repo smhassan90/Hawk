@@ -11,18 +11,18 @@ import java.util.Date;
 @Entity
 public class LeaveEntry {
     @NonNull
-    @PrimaryKey(autoGenerate = true)
-    private int id;
+    @PrimaryKey
+    private long id;
     private String date;
     private String reason;
     private String saveTime;
 
     @NonNull
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(@NonNull int id) {
+    public void setId(@NonNull long id) {
         this.id = id;
     }
 

@@ -298,6 +298,7 @@ public class Form extends AppCompatActivity implements View.OnClickListener, Vie
                 productOrder.setName(addedProductName);
                 productOrder.setQuantity(productQuantity);
                 productOrder.setProductId(addedProductId);
+                productOrder.setId(Util.getNextID(this,Codes.ProductOrder));
                 if (productOrders.size() == 1 && productOrders.get(0).getName().equals(Codes.MESSAGE)) {
                     productOrders = new ArrayList<>();
                 }
@@ -323,8 +324,9 @@ public class Form extends AppCompatActivity implements View.OnClickListener, Vie
 
                 order.setWorkWith(workWith.getWorkWith());
                 order.setLatLon(latLon);
-                long orderId = db.getOrderDAO().insert(order);
-
+                long orderId = Util.getNextID(this,Codes.ORDER);
+                order.setId(orderId);
+                db.getOrderDAO().insert(order);
                 if (isValidProduct(productOrders)) {
                     for (ProductOrder productOrder : productOrders) {
                         productOrder.setOrderId(orderId);

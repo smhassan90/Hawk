@@ -1,5 +1,6 @@
 package com.greenstar.greensales.utils;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.util.Log;
@@ -128,6 +129,7 @@ int i=0;
                 responseListener.responseAlert(response.toString());
             }
 
+
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONArray timeline) {
                 int i =9;
@@ -144,6 +146,29 @@ int i=0;
                 super.onFailure(statusCode, headers, throwable, errorResponse);
             }
         });
+    }
+
+    public static long getNextID(Activity activity, int type){
+        SharedPreferences editor = activity.getSharedPreferences(Codes.PREF_NAME, Context.MODE_PRIVATE);
+        String idType = "";
+
+        if(type==Codes.ORDER){
+            idType = "orderFormID";
+        }else if(type==Codes.LeaveEntries){
+            idType = "leaveEntryID";
+        }else if(type==Codes.UnapprovedCustomers){
+            idType = "unapprovedCustomersID";
+        }
+        long qtvFormID = 0;
+
+
+        qtvFormID = editor.getLong(idType,0);
+        qtvFormID++;
+        SharedPreferences.Editor edit =editor.edit();
+        edit.putLong(idType,qtvFormID);
+        edit.apply();
+
+        return qtvFormID;
     }
 
     public WebserviceResponse getResponseListener() {

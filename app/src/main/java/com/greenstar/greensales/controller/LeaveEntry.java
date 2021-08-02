@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import com.greenstar.greensales.R;
 import com.greenstar.greensales.db.AppDatabase;
+import com.greenstar.greensales.utils.Util;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -115,6 +116,7 @@ public class LeaveEntry extends AppCompatActivity implements View.OnClickListene
 
             date = etDate.getText()!=null?etDate.getText().toString():"";
             reason = etReason.getText()!=null?etReason.getText().toString():"";
+            leaveEntry.setId(Util.getNextID(this,Codes.LeaveEntries));
             leaveEntry.setDate(date);
             leaveEntry.setReason(reason);
             leaveEntry.setSaveTime(new Date().toString());

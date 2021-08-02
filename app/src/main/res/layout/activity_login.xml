@@ -30,12 +30,21 @@
             android:orientation="vertical">
 
             <EditText
-                android:id="@+id/etEmpCode"
+                android:id="@+id/etUsername"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/spinner_height"
                 android:layout_gravity="center_horizontal"
                 style="@style/text_style"
-                android:hint="@string/hintCode"/>
+                android:hint="@string/hintUsername"/>
+
+            <EditText
+                android:id="@+id/etPassword"
+                style="@style/text_style"
+                android:inputType="textPassword"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/spinner_height"
+                android:layout_gravity="center_horizontal"
+                android:hint="@string/hintPassword" />
 
             <Button
                 android:id="@+id/btnLogin"

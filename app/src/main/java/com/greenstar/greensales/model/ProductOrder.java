@@ -7,8 +7,8 @@ import android.support.annotation.NonNull;
 @Entity
 public class ProductOrder {
     @NonNull
-    @PrimaryKey(autoGenerate = true)
-    private int id;
+    @PrimaryKey
+    private long id;
     private String name;
     private String productId;
     private int quantity;
@@ -18,11 +18,11 @@ public class ProductOrder {
     }
 
     @NonNull
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(@NonNull int id) {
+    public void setId(@NonNull long id) {
         this.id = id;
     }
 

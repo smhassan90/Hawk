@@ -40,23 +40,28 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        EditText etEmpCode = findViewById(R.id.etEmpCode);
-        String code = etEmpCode.getText().toString();
-        if(code !=null && !"".equals(code)){
-            loginHit(code);
+        EditText etUsername = findViewById(R.id.etUsername);
+        EditText etPassword = findViewById(R.id.etPassword);
+        String username = etUsername.getText().toString();
+        String password = etPassword.getText().toString();
+        if(username !=null && !"".equals(username)
+        && password!=null && !"".equals(password)
+        ){
+            loginHit(username,password);
         }else{
-            Toast.makeText(this,"Employee code cannot be empty", Toast.LENGTH_LONG).show();
+            Toast.makeText(this,"Username or Password cannot be empty", Toast.LENGTH_LONG).show();
         }
 
     }
 
-    private void loginHit(final String code){
+    private void loginHit(final String username, final String password){
         RequestParams rp = new RequestParams();
-        rp.add("code", code);
+        rp.add("username", username);
+        rp.add("password", password);
         rp.add("uniqueId",HttpUtils.getUniqueId());
         rp.add("staffType",Codes.STAFFTYPE);
         dialog.show();
-        HttpUtils.get("login", rp, new JsonHttpResponseHandler() {
+        HttpUtils.get("loginOnly", rp, new JsonHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
                 String message = "";
@@ -78,7 +83,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                 Toast.makeText(Login.this, message, Toast.LENGTH_LONG).show();
                 if(Codes.ALL_OK.equals(codeReceived)){
                     Toast.makeText(getApplicationContext(),Util.saveDataFromJSON(data,getApplicationContext()),Toast.LENGTH_SHORT).show();
-                    saveData(code,token,staffName);
+                    saveData(username,token,staffName);
                     Intent myIntent = new Intent(Login.this, Menu.class);
                     Login.this.startActivity(myIntent);
                     finish();

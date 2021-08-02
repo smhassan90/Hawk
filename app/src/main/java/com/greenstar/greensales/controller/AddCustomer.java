@@ -30,6 +30,7 @@ import com.greenstar.greensales.model.SDCustomer;
 import com.greenstar.greensales.model.SDDepot;
 import com.greenstar.greensales.model.SDTown;
 import com.greenstar.greensales.model.UnapprovedSDCustomer;
+import com.greenstar.greensales.utils.Util;
 import com.toptoche.searchablespinnerlibrary.SearchableSpinner;
 
 import java.util.ArrayList;
@@ -151,6 +152,7 @@ public class AddCustomer extends AppCompatActivity implements View.OnTouchListen
         customer.setCustCode(sdCustomer.getCustCode());
         customer.setSaveTime("");
         customer.setLatLong(latLon);
+        customer.setId(Util.getNextID(this,Codes.UnapprovedCustomers));
 
         db.getUnapprovedSDCustomerDAO().insert(customer);
     }

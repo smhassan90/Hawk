@@ -2,6 +2,7 @@ package com.greenstar.greensales.model;
 
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
+import android.support.annotation.NonNull;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -11,8 +12,9 @@ import java.util.Date;
 @Entity
 public class Orderr {
 
-    @PrimaryKey(autoGenerate = true)
-    private int id;
+    @NonNull
+    @PrimaryKey
+    private long id;
     private String custCode;
     private int statusId;
     private String visitDate;
@@ -20,11 +22,11 @@ public class Orderr {
     private String latLon;
     private String comments;
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 

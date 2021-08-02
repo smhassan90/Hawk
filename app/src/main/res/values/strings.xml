@@ -1,7 +1,8 @@
 <resources>
     <string name="app_name">GSM-Hawk</string>
     <string name="login">LOGIN</string>
-    <string name="hintCode">Employee Code</string>
+    <string name="hintUsername">Username</string>
+    <string name="hintPassword">Password</string>
     <string name="hintTown">Town</string>
     <string name="hintDepot">Depot</string>
     <string name="hintCustomer">Providers</string>
