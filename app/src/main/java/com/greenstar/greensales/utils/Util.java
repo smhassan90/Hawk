@@ -153,22 +153,24 @@ int i=0;
         String idType = "";
 
         if(type==Codes.ORDER){
-            idType = "orderFormID";
+            idType = "ORDER";
         }else if(type==Codes.LeaveEntries){
-            idType = "leaveEntryID";
+            idType = "LeaveEntries";
         }else if(type==Codes.UnapprovedCustomers){
-            idType = "unapprovedCustomersID";
+            idType = "UnapprovedCustomers";
+        }else if (type==Codes.ProductOrder){
+            idType = "ProductOrder";
         }
-        long qtvFormID = 0;
+        long ID = 0;
 
 
-        qtvFormID = editor.getLong(idType,0);
-        qtvFormID++;
+        ID = editor.getLong(idType,0);
+        ID++;
         SharedPreferences.Editor edit =editor.edit();
-        edit.putLong(idType,qtvFormID);
+        edit.putLong(idType,ID);
         edit.apply();
 
-        return qtvFormID;
+        return ID;
     }
 
     public WebserviceResponse getResponseListener() {

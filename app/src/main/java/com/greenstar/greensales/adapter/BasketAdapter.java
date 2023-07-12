@@ -63,7 +63,6 @@ public class BasketAdapter extends ArrayAdapter<OrderDetail> implements View.OnC
             LayoutInflater inflater = mActivity.getLayoutInflater();
             v = inflater.inflate(R.layout.basket_row, null);
         }
-        LinearLayout llInnerBasket = v.findViewById(R.id.llInnerBasket);
 
         TextView tvCustomerName = (TextView) v.findViewById(R.id.tvCustomerName);
         TextView tvCustomerCode = (TextView) v.findViewById(R.id.tvCustomerCode);

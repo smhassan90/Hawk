@@ -17,18 +17,12 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.ProgressBar;
-import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.greenstar.greensales.R;
 import com.greenstar.greensales.adapter.CustomerAdapter;
-import com.greenstar.greensales.adapter.DepotAdapter;
-import com.greenstar.greensales.adapter.TownAdapter;
 import com.greenstar.greensales.db.AppDatabase;
 import com.greenstar.greensales.model.SDCustomer;
-import com.greenstar.greensales.model.SDDepot;
-import com.greenstar.greensales.model.SDTown;
 import com.greenstar.greensales.model.UnapprovedSDCustomer;
 import com.greenstar.greensales.utils.Util;
 import com.toptoche.searchablespinnerlibrary.SearchableSpinner;
@@ -108,6 +102,7 @@ public class AddCustomer extends AppCompatActivity implements View.OnTouchListen
         dialog.setMessage("Fetching location. Please wait...");
         dialog.setIndeterminate(true);
         dialog.setCanceledOnTouchOutside(false);
+        getSupportActionBar().setTitle("Add Customer");
     }
 
     @Override

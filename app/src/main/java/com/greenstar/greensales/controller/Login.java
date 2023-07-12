@@ -50,6 +50,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
             loginHit(username,password);
         }else{
             Toast.makeText(this,"Username or Password cannot be empty", Toast.LENGTH_LONG).show();
+
         }
 
     }
@@ -69,12 +70,14 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                 String data =null;
                 String token="";
                 String staffName = "";
+                long baseID =0;
                 try{
                     message = response.get("message").toString();
                     codeReceived = response.get("status").toString();
                     data =  response.get("data").toString();
                     token = response.get("token").toString();
                     staffName = response.get("staffName").toString();
+                    baseID = Long.valueOf(response.get("baseID").toString());
                 }catch(Exception e){
 
                 }finally {
@@ -83,7 +86,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                 Toast.makeText(Login.this, message, Toast.LENGTH_LONG).show();
                 if(Codes.ALL_OK.equals(codeReceived)){
                     Toast.makeText(getApplicationContext(),Util.saveDataFromJSON(data,getApplicationContext()),Toast.LENGTH_SHORT).show();
-                    saveData(username,token,staffName);
+                    saveData(baseID,username,token,staffName);
                     Intent myIntent = new Intent(Login.this, Menu.class);
                     Login.this.startActivity(myIntent);
                     finish();
@@ -107,12 +110,16 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
             }
         });
     }
-    public void saveData(String code, String token, String staffName){
+    public void saveData(long baseID, String code, String token, String staffName){
         SharedPreferences.Editor editor = getSharedPreferences(Codes.PREF_NAME, MODE_PRIVATE).edit();
         editor.putString("name", staffName);
         editor.putString("code", code);
         editor.putString("token", token);
         editor.putBoolean("isLoggedIn",true);
+        editor.putLong("LeaveEntries", baseID);
+        editor.putLong("ORDER", baseID);
+        editor.putLong("ProductOrder", baseID);
+        editor.putLong("UnapprovedCustomers", baseID);
         editor.apply();
     }
 }

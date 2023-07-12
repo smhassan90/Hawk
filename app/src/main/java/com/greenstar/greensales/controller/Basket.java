@@ -42,6 +42,7 @@ public class Basket  extends AppCompatActivity implements ProductOrderDeleteList
         }else{
             Toast.makeText(this,"There is no pending offer.", Toast.LENGTH_SHORT).show();
         }
+        getSupportActionBar().setTitle("Visits");
     }
 
     @Override

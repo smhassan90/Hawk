@@ -9,6 +9,7 @@ import android.widget.Toast;
 
 import com.greenstar.greensales.R;
 import com.greenstar.greensales.db.AppDatabase;
+import com.greenstar.greensales.model.Notification;
 import com.greenstar.greensales.utils.Util;
 import com.greenstar.greensales.utils.WebserviceResponse;
 
@@ -22,6 +23,7 @@ public class Menu extends AppCompatActivity implements View.OnClickListener, Web
     LinearLayout llProfile;
     LinearLayout llLeaveRequest;
     LinearLayout llDashboard;
+    LinearLayout llNotification;
 
     AppDatabase db =null;
 
@@ -49,6 +51,9 @@ public class Menu extends AppCompatActivity implements View.OnClickListener, Web
 
         llDashboard = findViewById(R.id.llDashboard);
         llDashboard.setOnClickListener(this);
+
+        llNotification = findViewById(R.id.llNotification);
+        llNotification.setOnClickListener(this);
     }
 
     @Override
@@ -57,24 +62,29 @@ public class Menu extends AppCompatActivity implements View.OnClickListener, Web
             Intent myIntent = new Intent(this, Form.class);
             startActivity(myIntent);
         }else if(v.getId()==R.id.llSync){
+
             Util util = new Util();
             util.setResponseListener(this);
 
             util.performSync(this);
+
+
         }else if(v.getId()==R.id.llBasket){
             Intent myIntent = new Intent(this, Basket.class);
             startActivity(myIntent);
         }else if(v.getId()==R.id.llProfile){
-            /*
+
             Intent myIntent = new Intent(this, AddCustomer.class);
             startActivity(myIntent);
-            */
-            Toast.makeText(this,"Feature blocked",Toast.LENGTH_SHORT).show();
+
         }else if(v.getId()==R.id.llLeaveRequest){
             Intent myIntent = new Intent(this, LeaveEntry.class);
             startActivity(myIntent);
         }else if(v.getId()==R.id.llDashboard){
             Intent myIntent = new Intent(this, DashboardController.class);
+            startActivity(myIntent);
+        }else if(v.getId()==R.id.llNotification){
+            Intent myIntent = new Intent(this, NotificationController.class);
             startActivity(myIntent);
         }
     }

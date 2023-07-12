@@ -56,6 +56,7 @@ public class LeaveEntry extends AppCompatActivity implements View.OnClickListene
 
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("Leave Form");
 
         llParentLayout = findViewById(R.id.llParentLayout);
 

@@ -8,6 +8,7 @@ import android.content.Context;
 import com.greenstar.greensales.dao.DashboardDAO;
 import com.greenstar.greensales.dao.GSSWorkWithDAO;
 import com.greenstar.greensales.dao.LeaveEntryDAO;
+import com.greenstar.greensales.dao.NotificationDAO;
 import com.greenstar.greensales.dao.OrderDAO;
 import com.greenstar.greensales.dao.ProductDAO;
 import com.greenstar.greensales.dao.ProductOrderDAO;
@@ -25,6 +26,7 @@ import com.greenstar.greensales.dao.UnapprovedSDCustomerDAO;
 import com.greenstar.greensales.model.Dashboard;
 import com.greenstar.greensales.model.GSSWorkWith;
 import com.greenstar.greensales.model.LeaveEntry;
+import com.greenstar.greensales.model.Notification;
 import com.greenstar.greensales.model.Orderr;
 import com.greenstar.greensales.model.Product;
 import com.greenstar.greensales.model.ProductOrder;
@@ -40,8 +42,8 @@ import com.greenstar.greensales.model.SDTownDepot;
 import com.greenstar.greensales.model.SDTownStaff;
 import com.greenstar.greensales.model.UnapprovedSDCustomer;
 
-@Database(entities = {LeaveEntry.class, Dashboard.class, GSSWorkWith.class, UnapprovedSDCustomer.class, ProductOrder.class, Orderr.class, Product.class, SDSKUGroup.class, SDStatus.class, SDCustomer.class, SDDepot.class, SDDepotStaff.class, SDStaff.class, SDTown.class, SDTownCustomer.class, SDTownDepot.class, SDTownStaff.class},
-        version = 4)
+@Database(entities = {LeaveEntry.class, Dashboard.class, GSSWorkWith.class, UnapprovedSDCustomer.class, ProductOrder.class, Orderr.class, Product.class, SDSKUGroup.class, SDStatus.class, SDCustomer.class, SDDepot.class, SDDepotStaff.class, SDStaff.class, SDTown.class, SDTownCustomer.class, SDTownDepot.class, SDTownStaff.class, Notification.class},
+        version = 5)
 public abstract class AppDatabase extends RoomDatabase {
     private static final String DATABASE_NAME = "salesdb";
     private static AppDatabase INSTANCE;
@@ -62,7 +64,9 @@ public abstract class AppDatabase extends RoomDatabase {
     public abstract UnapprovedSDCustomerDAO getUnapprovedSDCustomerDAO();
     public abstract GSSWorkWithDAO getWorkWithDAO();
     public abstract LeaveEntryDAO getLeaveEntryDAO();
-    public abstract DashboardDAO getDashboardDAO();
+    public abstract  DashboardDAO getDashboardDAO();
+    public abstract NotificationDAO getNotificationDAO();
+
     public static AppDatabase getAppDatabase(Context context) {
 
         if (INSTANCE == null) {
@@ -77,4 +81,5 @@ public abstract class AppDatabase extends RoomDatabase {
     public static void destroyInstance() {
         INSTANCE = null;
     }
+
 }

@@ -120,6 +120,7 @@ public class Form extends AppCompatActivity implements View.OnClickListener, Vie
 
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("Order Form");
 
         SharedPreferences shared = getSharedPreferences(Codes.PREF_NAME, MODE_PRIVATE);
         String name = (shared.getString("name", ""));

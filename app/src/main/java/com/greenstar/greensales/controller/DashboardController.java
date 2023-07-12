@@ -25,6 +25,7 @@ public class DashboardController  extends AppCompatActivity {
         wvDashboard.loadData(dashboard.getHtml(), "text/html", null);
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("Dashboard");
     }
 
     @Override

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="@dimen/padding_10"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/padding_10"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:weightSum="6"
+            android:layout_marginTop="@dimen/padding_10"
+            style="@style/basket_product_style"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:id="@+id/llInnerNotification"
+                android:layout_gravity="center_vertical"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/text_style"
+                    android:id="@+id/tvShortNote"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/text_style"
+                    android:id="@+id/tvDetailNote"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/text_style"
+                    android:id="@+id/tvDate"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_weight="5"
+                android:gravity="right"
+                android:layout_height="match_parent">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/darkGreen"
+                    android:textColor="#ffffff"
+                    android:padding="@dimen/padding_10"
+                    android:layout_marginRight="@dimen/padding_10"
+                    style="@style/large_text_style"
+                    android:layout_gravity="center"
+                    android:id="@+id/tvNew"/>
+                <ImageButton
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:background="@drawable/delete_icon"
+                    android:layout_gravity="center"
+                    android:id="@+id/btnDelete"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+</android.support.constraint.ConstraintLayout>

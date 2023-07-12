@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">GSM-Hawk</string>
+    <string name="app_name">Fynul Sale Solution</string>
     <string name="login">LOGIN</string>
     <string name="hintUsername">Username</string>
     <string name="hintPassword">Password</string>
@@ -12,7 +12,7 @@
     <string name="hintAdd">Add</string>
     <string name="hintSubmit">Submit</string>
     <string name="hintPerformSync">Sync Data</string>
-    <string name="hintOrderBooking">DCR</string>
+    <string name="hintOrderBooking">Order Form</string>
     <string name="hintOrderBasket">Visits</string>
     <string name="hintProfile">Profile</string>
     <string name="hintAddCustomer">Add Customer</string>
@@ -25,6 +25,8 @@
     <string name="btnLeaveRequest">Leave Request</string>
     <string name="hintLeaveRequest">Leave Request</string>
     <string name="hintDashboard">Dashboard</string>
+    <string name="hintNotification">Notifications</string>
+    <string name="hintNEW">NEW</string>
     <string-array name="status_array">
         <item>Order - 01</item>
         <item>Close - 02</item>
